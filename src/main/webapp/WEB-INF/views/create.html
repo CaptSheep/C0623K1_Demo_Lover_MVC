@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>CREATE LOVER</h1>
+<form th:action="@{/lover/create}" th:object="${newLover}" method="post">
+  <input type="text" hidden="hidden" th:field="*{id}">
+  <input type="text" placeholder="Input Lover's Name : " th:field="*{name}" >
+  <input type="text" placeholder="Input Lover's Address : " th:field="*{address}" >
+  <input type="text" placeholder="Input Lover's Phone Number : " th:field="*{phoneNumber}" >
+  <button type="submit">Create Lover</button>
+</form>
+</body>
+</html>

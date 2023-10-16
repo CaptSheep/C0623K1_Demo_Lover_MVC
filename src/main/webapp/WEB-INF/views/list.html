@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/lover/create}">Create Lover</a>
+    <table border="10px solid red" style="border-collapse: collapse; text-align: center">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <tr th:each="item:${listLover}">
+            <td th:text="${item.getId()}"></td>
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getAddress()}"></td>
+            <td th:text="${item.getPhoneNumber()}"></td>
+            <td><a th:href="@{/lover/delete/{id}(id=${item.getId()})}" onclick="return confirm('A ziu sua ?')">Delete Lover</a></td>
+            <td><a th:href="@{/lover/update/{id}(id=${item.getId()})}">Update Lover</a></td>
+        </tr>
+    </table>
+</body>
+</html>
